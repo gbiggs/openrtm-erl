@@ -1,0 +1,13 @@
+%%% -*- mode:erlang -*-
+
+{application, openrtm_erl,
+ [{description, "OpenRTM-aist-erlang RT-Middleware implementation"},
+  {vsn, "%VERSION%"},
+  {modules, [%MODULES%]},
+  {registered, []},
+  {applications,[kernel,stdlib]},
+  {mod,{openrtm_erl,[]}},
+  {env, [{rtc_conf, "rtc.conf"}]}
+ ]
+}.
+

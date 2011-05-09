@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+# To compile a template:
+# erlc -I ../idl/ +"{light_ifr,true}" +this +handle_info +"{be,erl_template}" ../idl/???.idl
+
+erlc +"{light_ifr,true}" +this +handle_info BasicDataType.idl
+cat RTC.hrl | sed 's/(RTC_HRL/(BasicDataType_HRL/g' > BasicDataType.hrl
+
+erlc +"{light_ifr,true}" +this +handle_info *.idl
+
+echo "MODULES = \\" > idl_modules.tmp
+ls *.erl | sed -e 's/\(.*\).erl/\t\1 \\/' >> idl_modules.tmp
+sed '$s/\\$//' idl_modules.tmp > idl_modules.mk
+rm idl_modules.tmp
+
+echo "HRL = \\" > idl_hrl.tmp
+ls *.hrl | sed -e 's/\(.*\).hrl/\t\1.hrl \\/' >> idl_hrl.tmp
+sed '$s/\\$//' idl_hrl.tmp > idl_hrl.mk
+rm idl_hrl.tmp
+

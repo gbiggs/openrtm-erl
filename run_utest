@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+erl -s eunit test ${1}
+

@@ -1,0 +1,5 @@
+*.swp
+*.swo
+ebin
+variables-ct*
+*.beam

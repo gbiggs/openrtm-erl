@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+SUITE=${1}
+shift
+
+export CT_INCLUDE_PATH=~/research/src/local/openrtm-erl/include:~/research/src/local/openrtm-erl/src/
+run_test -suite test/${SUITE}_SUITE -logdir test/logs/ $@
+
