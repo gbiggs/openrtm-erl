@@ -16,6 +16,11 @@ Erlang is well-suited to two programming domains: concurrent systems and
 information processing. OpenRTM-erlang allows the easy implementation of
 components that specialise in these areas.
 
+This software is developed at the National Institute of Advanced
+Industrial Science and Technology. Approval number H23PRO-1274. This
+software is licensed under the Lesser General Public License. See
+COPYING.LESSER.
+
 Status
 ======
 
